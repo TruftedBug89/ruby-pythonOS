@@ -1,1 +1,2 @@
-
+alumne escitorio descargas
+alumne = [escritorio,descargas]
