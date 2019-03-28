@@ -1,0 +1,12 @@
+
+ --- ATENCIÓ: AQUESTA ES UNA VERSIÓ BETA DE L'APLICACIÓ FINAL ----
+
+Tot el codi s'escriu al fitxer Run.rb.
+
+Pots executar el codi en viu des del executable "TeGuiX.exe".
+
+Els fitxers de python per a la execució s'afegeixen a la carpeta "py".
+
+Els fitxers output generats per altres aplicacions o codis de python van a la carpeta "output".
+
+Els ASCII arts s'afegeixen a la carpeta "ascii".
