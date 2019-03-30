@@ -83,7 +83,7 @@ class Run
 
 		pyex("Directory.py")
 
-		TeGui.delay(1)
+		TeGui.delay(0.5)
 
 		TeGui.read("output.txt")
 	
