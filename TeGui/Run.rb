@@ -81,7 +81,7 @@ class Run
 
 		TeGui.write("input.txt",$input,"w")
 
-		pyex("Directory.py")
+		TeGui.pyex("Directory.py")
 
 		TeGui.delay(0.5)
 
