@@ -75,6 +75,26 @@ class Run
 
 		TeGui.print
 
+		TeGui.delay(2)
+
+		TeGui.input("Proba d'input")
+
+		TeGui.write("input.txt",$input,"w")
+
+		pyex("Directory.py")
+
+		TeGui.delay(1)
+
+		TeGui.read("output.txt")
+	
+		TeGui.frameclear
+
+		TeGui.text($output,"middle","middle","")
+
+		TeGui.clear
+
+		TeGui.print
+
 =begin
 		20.times do 
 
