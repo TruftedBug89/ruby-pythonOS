@@ -30,11 +30,13 @@ Per demanar un input utilitza TeGui.input("text"), el input es guarda a la varia
 
 Pots executar un fitxer de python utilitzant: TeGui.pyex("fitxer.py").
 
-Es pot escriure un fitxer utilitzant: write("fitxer.out","text o variable","mode - w/a").
+Es pot escriure un fitxer utilitzant: TeGui.write("fitxer.out","text o variable","mode - w/a").
 
 Pots importar el output d'altres aplicacions o codis de python utilitzant: TeGui.read("fitxer.out").
 
-Pots moure la posició del cursor utilitzant: cursor(y,x).
+Pots moure la posició del cursor utilitzant: TeGui.cursor(y,x).
+
+Pots amagar o mostrar el cursor utilitzant: TeGui.cursorshow - TeGui.cursorhide.
 
 Pots netejar el terminal utilitzant: TeGui.clear.
 
@@ -96,13 +98,17 @@ class Run
 		TeGui.print
 
 =begin
+		TeGui.cursorhide
+
 		20.times do 
 
 			TeGui.cursor(0,0)
 			TeGui.print
-			TeGui.delay(0.1)
+			TeGui.delay(0.4)
 
 		end
+
+		TeGui.cursorshow
 =end
 
 		TeGui.delay(5)
