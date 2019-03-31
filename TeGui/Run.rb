@@ -76,26 +76,26 @@ class Run
 		TeGui.text("Terminal Graphical User Interface - v.2.2 - by walray","middle","down - 3","")
 
 		TeGui.print
-
-		TeGui.delay(2)
-
-		TeGui.input("Proba d'input")
-
-		TeGui.write("input.txt",$input,"w")
-
-		TeGui.pyex("directory.py")
-
-		TeGui.delay(0.5)
-
-		TeGui.read("output.txt")
+		
+		while true
 	
-		TeGui.frameclear
+			TeGui.input("")
 
-		TeGui.text($output,"middle","middle","")
+			TeGui.write("input.txt",$input,"w")
 
-		TeGui.clear
+			TeGui.pyex("directory.py")
 
-		TeGui.print
+			TeGui.read("output.txt")
+	
+			TeGui.frameclear
+
+			TeGui.text($output,"middle","middle","")
+
+			TeGui.clear
+
+			TeGui.print
+
+		end
 
 =begin
 		TeGui.cursorhide
