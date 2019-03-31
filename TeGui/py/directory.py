@@ -41,6 +41,7 @@ class directory(object):#
 			indmain = self.main.index(folder)
 			indnext = self.data.index(self.main[indmain+1])
 			finalls = self.data[inddata:indnext]
+			print(finalls[len(finalls)-1])
 			if finalls[len(finalls)-1] == ">":
 				finalls += "Empty Folder !!"#Arreglar
 			outputwrite.write(finalls)
