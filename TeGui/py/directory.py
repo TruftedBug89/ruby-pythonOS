@@ -3,7 +3,7 @@ class directory(object):#
 	#To start with the class its init function puts into self.data all the data from the txt
 	#Then puts on self.main all the folder names
 	def __init__(self):
-		dataread = open("directorydata.txt","r+")
+		dataread = open("./output/directorydata.txt","r+")
 		self.data = str(dataread.read())
 		dataread.close()
 		self.main = []
@@ -20,8 +20,8 @@ class directory(object):#
 		while len(newfolder) < 8:
 			newfolder += "-"
 		newfolder += ">"
-		datawrite = open("directorydata.txt","w+")
-		outputwrite = open("output.txt","w+")
+		datawrite = open("./output/directorydata.txt","w+")
+		outputwrite = open("./output/output.txt","w+")
 		if newfolder in self.data:
 			outputwrite.write("SyntaxError: Cant repeat folder name")
 			datawrite.write(self.data)
@@ -33,7 +33,7 @@ class directory(object):#
 #This function makes a ls on any folders if folder parameter is None or does a ls on
 #Specified folder if empty prints empty
 	def ls(self,folder):
-		outputwrite = open("output.txt","w+")
+		outputwrite = open("./output/output.txt","w+")
 		if folder == None:
 			outputwrite.write(str(self.main).replace("\'",""))
 		elif folder in self.main:
@@ -53,7 +53,7 @@ class directory(object):#
 	# 	self.data[nameind:nameind+8] = newname
 	# 	print(data)
 
-inp = open("input.txt","r+")
+inp = open("./output/input.txt","r+")
 inpread = str(inp.read())
 inp.close()
 pos = 0
