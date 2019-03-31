@@ -28,23 +28,24 @@ class TeGui
 		i = 0
 		a = @@x - 1
 
-		$stdout.flush
-
 		@@y.times do
 
 			puts $arr[i..a].join("")
+			$stdout.flush
+
 			i += @@x
 			a += @@x
 
 		end
 
-=begin IN BETA
+=begin IN BETA	
 		o = 1
 
 		@@y.times do
-		
+
   			puts "\033[#{o};0H #{$arr[i..a].join("")}"
-  			
+  			$stdout.flush
+
 			i += @@x
 			a += @@x
 			o += 1
@@ -74,8 +75,6 @@ class TeGui
 			r = (r - 1)
 			l = (l - 1)
 
-			i = 0
-
 			$arr.fill("─", ( (u * @@x) + l)..( (u * @@x) + r) )
 
 			$arr.fill("─", ( (d * @@x) + l)..( (d * @@x) + r) )
@@ -86,7 +85,7 @@ class TeGui
 			$arr[(d * @@x) + l] = "└"
 			$arr[(d * @@x) + r] = "┘"
 
-			@@y.times do
+			@@y.times do |i|
 
 				if (i > u) && (i < d)
 
@@ -95,8 +94,6 @@ class TeGui
 					$arr[(i * @@x) + r] = "│"
 
 				end
-
-				i += 1
 
 			end
 
@@ -115,8 +112,6 @@ class TeGui
 	def self.text(txt,x,y,c)
 
 		if (x != "0") && (x != 0)
-
-			i = 0
 
 			if x.is_a? (String)
 
@@ -153,11 +148,10 @@ class TeGui
 		
 		end
 
-		txt.length.times do
+		txt.length.times do |i|
 
 			$arr[a] = txt[i]
 
-			i += 1
 			a += 1
 
 		end
@@ -173,11 +167,10 @@ class TeGui
 
 		a = a.split("\n")
 
-		i = 0
 
 		if true #IN BETA
 
-			a.length.times do
+			a.length.times do |i|
 
 				if y.is_a? (String)
 					if y.include?("up")
@@ -197,8 +190,6 @@ class TeGui
 					TeGui.text(a[i],x,"#{y} + #{i}",c)
 				
 				end
-
-				i += 1
 
 			end
 
@@ -241,9 +232,23 @@ class TeGui
 
 
 	def self.cursor(y,x)
-		
+
 		printf("\e[#{y};#{x}H")
 	
+	end
+
+
+	def self.cursorshow
+
+		printf("\e[?25h")
+
+	end
+
+
+	def self.cursorhide
+
+		printf("\e[?25l")
+
 	end
 
 
@@ -298,7 +303,7 @@ class TeGui
 
 	def self.version
 
-		puts "TeGui ( Terminal Graphical User Interface ) - v.2.2 - by walray"
+		puts "TeGui ( Terminal Graphical User Interface ) - v.2.3 - by walray"
 
 	end
 
