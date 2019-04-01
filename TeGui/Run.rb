@@ -62,6 +62,8 @@ class Run
 
 # ------------ Code goes here ------------ #
 
+		
+		r = rand(1..3)
 
 		TeGui.clear
 
@@ -71,7 +73,7 @@ class Run
 
 		TeGui.frameinframe(3,19,34,67)
 
-		TeGui.ascii("ahegao.ascii","middle","middle - 2","")
+		TeGui.ascii("ahegao#{r}.ascii","middle","middle - 2","")
 
 		TeGui.text("Terminal Graphical User Interface - v.2.2 - by walray","middle","down - 3","")
 
