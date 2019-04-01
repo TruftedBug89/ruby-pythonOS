@@ -71,7 +71,7 @@ class Run
 
 		TeGui.frameinframe(1,25,1,100)
 
-		TeGui.frameinframe(3,19,34,67)
+		#TeGui.frameinframe(3,19,34,67)
 
 		TeGui.ascii("ahegao#{r}.ascii","middle","middle - 2","")
 
