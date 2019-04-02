@@ -63,7 +63,7 @@ class Run
 # ------------ Code goes here ------------ #
 
 		
-		r = rand(1..3)
+		r = rand(1..5)
 
 		TeGui.clear
 
