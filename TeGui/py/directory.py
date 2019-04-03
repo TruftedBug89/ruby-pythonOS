@@ -46,7 +46,7 @@ class directory(object):
 #Specified folder if empty prints empty
 	def ls(self,folder):
 		outputwrite = open("./output/output.txt","w+")
-		if folder == None:
+		if folder == 'None':
 			outputwrite.write(str(self.main).replace("\'",""))
 		elif folder in self.main:
 			inddata = self.data.index(folder)
@@ -112,24 +112,21 @@ class directory(object):
 		# 		datawrite.close()
 		# 		outputwrite.close()
 		# 		return
-	def rm(self,type,foldername):
-		if type == "-d":
-			datawrite = open("./output/directorydata.txt","w+")
-			outputwrite = open("./output/output.txt","w+")
-			origcopy = foldername
-			if foldername in self.main:
-				while len(foldername) < 8:
-					foldername += "-"
-				foldername += ">"
-				self.data = self.data.replace(foldername,"")
-				outputwrite.write("Folder "+origcopy+" deleted succesfully !")
-				datawrite.write(self.data)
-			elif foldername in self.data:
-				###
-			datawrite.close()
-			outputwrite.close()
-		elif type == "-f":
-			pass
+	def rm(self,foldername):
+		datawrite = open("./output/directorydata.txt","w+")
+		outputwrite = open("./output/output.txt","w+")
+		origcopy = foldername
+		if foldername in self.main:
+			while len(foldername) < 8:
+				foldername += "-"
+			foldername += ">"
+			self.data = self.data.replace(foldername,"")
+			outputwrite.write("Folder "+origcopy+" deleted succesfully !")
+			datawrite.write(self.data)
+		elif foldername in self.data:
+			###
+		datawrite.close()
+		outputwrite.close()
 	def mv(self,file,finaldest):
 		pass
 
@@ -150,5 +147,7 @@ for e in inpread:
 if function not in functions:
 	pass
 else:
+	parameters = param.split(" ")
+	parameters.remove(parameters[0])
 	exe = directory()
-	eval("exe."+function+"("+param+")")
+	eval("exe."+function+"("+str(parameters).replace("]","").replace("[","").replace(" ",""))+")")
