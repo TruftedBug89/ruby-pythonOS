@@ -62,33 +62,56 @@ class directory(object):
 		else:
 			outputwrite.write("Folder doesn't exist")
 		outputwrite.close()
-	def rn(self,oldname,newname):
+	def rn(self,type,oldname,newname):
 		if len(newname) > 8:
 			outputwrite = open("./output/output.txt","w+")
 			outputwrite.write("SyntaxError: Rename is too long, max. 8 characters !")
 			outputwrite.close()
 			return
-		outputwrite = open("./output/output.txt","w+")
-		original = oldname
-		if original in self.main:
-			datawrite = open("./output/directorydata.txt","w+")
-			outputwrite.write("Folder "+oldname+" succefully changed for "+newname)
-			while len(oldname) < 8:
-				oldname += "-"
-			oldname += ">"
-			while len(newname) < 8:
-				newname += "-"
-			newname += ">"
-			self.data = self.data.replace(oldname,newname)
-			datawrite.write(self.data)
-			datawrite.close()
-			outputwrite.close()
-			return
-		elif original not in self.main:
-			outputwrite.write("Error: No folder named :"+oldname)
-			datawrite.close()
-			outputwrite.close()
-			return
+		if type == "-d":
+			outputwrite = open("./output/output.txt","w+")
+			original = oldname
+			if original in self.main:
+				datawrite = open("./output/directorydata.txt","w+")
+				outputwrite.write("Folder "+oldname+" succefully changed for "+newname)
+				while len(oldname) < 8:
+					oldname += "-"
+				oldname += ">"
+				while len(newname) < 8:
+					newname += "-"
+				newname += ">"
+				self.data = self.data.replace(oldname,newname)
+				datawrite.write(self.data)
+				datawrite.close()
+				outputwrite.close()
+				return
+			elif original not in self.main:
+				outputwrite.write("Error: No folder named :"+oldname)
+				datawrite.close()
+				outputwrite.close()
+				return
+		# elif type == "-f":
+		# 	outputwrite = open("./output/output.txt","w+")
+		# 	original = oldname
+		# 	if original in self.main:
+		# 		datawrite = open("./output/directorydata.txt","w+")
+		# 		outputwrite.write("File "+oldname+" succefully changed for "+newname)
+		# 		while len(oldname) < 8:
+		# 			oldname += "-"
+		# 		oldname += ">"
+		# 		while len(newname) < 8:
+		# 			newname += "-"
+		# 		newname += ">"
+		# 		self.data = self.data.replace(oldname,newname)
+		# 		datawrite.write(self.data)
+		# 		datawrite.close()
+		# 		outputwrite.close()
+		# 		return
+		# 	elif original not in self.main:
+		# 		outputwrite.write("Error: No File named :"+oldname)
+		# 		datawrite.close()
+		# 		outputwrite.close()
+		# 		return
 	def rm(self,foldername):
 		datawrite = open("./output/directorydata.txt","w+")
 		outputwrite = open("./output/output.txt","w+")
@@ -104,7 +127,8 @@ class directory(object):
 			###
 		datawrite.close()
 		outputwrite.close()
-
+	def mv(self,file,finaldest):
+		pass
 
 
 
