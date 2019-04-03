@@ -124,7 +124,7 @@ class directory(object):
 			outputwrite.write("Folder "+origcopy+" deleted succesfully !")
 			datawrite.write(self.data)
 		elif foldername in self.data:
-			###
+			pass
 		datawrite.close()
 		outputwrite.close()
 	def mv(self,file,finaldest):
