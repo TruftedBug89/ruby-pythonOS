@@ -112,21 +112,24 @@ class directory(object):
 		# 		datawrite.close()
 		# 		outputwrite.close()
 		# 		return
-	def rm(self,foldername):
-		datawrite = open("./output/directorydata.txt","w+")
-		outputwrite = open("./output/output.txt","w+")
-		origcopy = foldername
-		if foldername in self.main:
-			while len(foldername) < 8:
-				foldername += "-"
-			foldername += ">"
-			self.data = self.data.replace(foldername,"")
-			outputwrite.write("Folder "+origcopy+" deleted succesfully !")
-			datawrite.write(self.data)
-		elif foldername in self.data:
-			###
-		datawrite.close()
-		outputwrite.close()
+	def rm(self,type,foldername):
+		if type == "-d":
+			datawrite = open("./output/directorydata.txt","w+")
+			outputwrite = open("./output/output.txt","w+")
+			origcopy = foldername
+			if foldername in self.main:
+				while len(foldername) < 8:
+					foldername += "-"
+				foldername += ">"
+				self.data = self.data.replace(foldername,"")
+				outputwrite.write("Folder "+origcopy+" deleted succesfully !")
+				datawrite.write(self.data)
+			elif foldername in self.data:
+				###
+			datawrite.close()
+			outputwrite.close()
+		elif type == "-f":
+			pass
 	def mv(self,file,finaldest):
 		pass
 
