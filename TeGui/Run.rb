@@ -75,7 +75,7 @@ class Run
 
 		TeGui.ascii("ahegao#{r}.ascii","middle","middle - 2","")
 
-		TeGui.text("Terminal Graphical User Interface - v.2.2 - by walray","middle","down - 3","")
+		TeGui.text("Terminal Graphical User Interface - v.2.4 - by walray","middle","down - 3","")
 
 		TeGui.print
 		
