@@ -67,15 +67,17 @@ class Run
 
 		TeGui.clear
 
-		TeGui.frame(100,25)
+		TeGui.frame("auto","auto - 1")
 
-		TeGui.frameinframe(1,25,1,100)
+		TeGui.frameinframe("auto","auto","auto","auto")
 
 		#TeGui.frameinframe(3,19,34,67)
 
 		TeGui.ascii("ahegao#{r}.ascii","middle","middle - 2","")
 
 		TeGui.text("Terminal Graphical User Interface - v.2.4 - by walray","middle","down - 3","")
+
+		TeGui.text("-- TeGui Project --","middle","down - 1","red")
 
 		TeGui.print
 		
