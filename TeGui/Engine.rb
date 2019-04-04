@@ -2,6 +2,7 @@
 
 
 require './Colorizer.rb'
+require 'io/console'
 
 
 # ------------ TEGUI by walray ------------ #
@@ -14,6 +15,20 @@ class TeGui
 
 
 	def self.frame(width,height)
+
+		if width.is_a? (String)
+
+			width = width.gsub("auto",IO.console.winsize[1].to_s)
+			width = eval(width)
+
+		end
+
+		if height.is_a? (String)
+
+			height = height.gsub("auto",IO.console.winsize[0].to_s)
+			height = eval(height)
+
+		end
 
 		$arr = Array.new( (width * height) , " ")
 
@@ -67,6 +82,33 @@ class TeGui
 
 	def self.frameinframe(u,d,l,r)
 
+		if u.is_a? (String)
+
+			u = u.gsub("auto","1")
+			u = eval(u)
+
+		end
+
+		if l.is_a? (String)
+
+			l = l.gsub("auto","1")
+			l = eval(l)
+
+		end
+
+		if r.is_a? (String)
+
+			r = r.gsub("auto","#{@@x}")
+			r = eval(r)
+
+		end
+
+		if d.is_a? (String)
+
+			d = d.gsub("auto","#{@@y}")
+			d = eval(d)
+
+		end
 
 		if (u < d) && (l < r) && (r <= @@x) && (d <= @@y) && (u != 0) && (l != 0)
 
@@ -303,7 +345,7 @@ class TeGui
 
 	def self.version
 
-		puts "TeGui ( Terminal Graphical User Interface ) - v.2.3 - by walray"
+		puts "TeGui ( Terminal Graphical User Interface ) - v.2.4 - by walray"
 
 	end
 
