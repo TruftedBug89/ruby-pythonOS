@@ -144,10 +144,13 @@ for e in inpread:
 		param = inpread[pos:]
 		break
 	pos += 1
+
 if function not in functions:
 	pass
 else:
-	parameters = param.split(" ")
-	parameters.remove(parameters[0])
-	exe = directory()
-	eval("exe."+function+"("+str(parameters).replace("]","").replace("[","").replace(" ",""))+")")
+	if param != ' None':
+		parameters = param.split(" ")
+		parameters.remove(parameters[0])
+		eval("exe."+function+"("+str(parameters).replace("]","").replace("[","").replace(" ",""))+")")
+	else:
+		eval("exe."+function+"("+str(parameters).replace("]","").replace("[","").replace(" ",""))+")")
