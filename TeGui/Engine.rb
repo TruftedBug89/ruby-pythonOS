@@ -203,7 +203,7 @@ class TeGui
 					end
 
 					if (i == txt.length - 1)
-						Colorize.foreground( (a + i),"default","after")
+						Colorize.foreground( (a + i - 1),"default","after")
 					end
 
 				end
