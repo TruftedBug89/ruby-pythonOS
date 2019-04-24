@@ -196,12 +196,20 @@ class TeGui
 
 			if (!c.empty?) && (c != " ")
 
-				if (i == 0)
-					Colorize.foreground(a,c,"before")
+				if (txt.length > 1)
+
+					if (i == 0)
+						Colorize.foreground(a,c,"before")
+					end
+
+					if (i == txt.length - 1)
+						Colorize.foreground( (a + i),"default","after")
+					end
+
 				end
 
-				if (i == txt.length - 1)
-					Colorize.foreground( (a + i),"default","after")
+				if (txt.length == 1)
+					Colorize.foreground(a,c,"both")
 				end
 
 			end

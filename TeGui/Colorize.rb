@@ -55,13 +55,13 @@ class Colorize
 
 				if (p == "after")
 
-					$arr[a] = "#{cl}#{ch}"
+					$arr[a] = "#{ch}#{cl}"
 
 				end
 
 				if (p == "both")
 
-					$arr[a] = "#{cl}#{ch}#{cl}"
+					$arr[a] = "#{cl}#{ch}#{@@default}"
 				
 				end
 				
@@ -70,6 +70,7 @@ class Colorize
 		end
 
 	end
+
 
 	def self.background(a,c,p)
 		#IN BETA
