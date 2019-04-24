@@ -1,7 +1,7 @@
 # ------------ Requires ------------ #
 
 
-require './Colorizer.rb'
+require './Colorize.rb'
 require 'io/console'
 
 
@@ -194,11 +194,21 @@ class TeGui
 
 			$arr[a] = txt[i]
 
+			if (!c.empty?) && (c != " ")
+
+				if (i == 0)
+					Colorize.foreground(a,c,"before")
+				end
+
+				if (i == txt.length - 1)
+					Colorize.foreground( (a + i),"default","after")
+				end
+
+			end
+
 			a += 1
 
 		end
-
-		Colorizer.colorize(a,c,txt.to_s)
 
 	end
 
@@ -276,6 +286,14 @@ class TeGui
 	def self.cursor(y,x)
 
 		printf("\e[#{y};#{x}H")
+	
+	end
+
+
+	def self.size
+
+		$x = @@x
+		$y = @@y
 	
 	end
 
