@@ -36,6 +36,8 @@ Pots importar el output d'altres aplicacions o codis de python utilitzant: TeGui
 
 Pots moure la posició del cursor utilitzant: TeGui.cursor(y,x).
 
+Per obtenir la mida del frame generat utilitza: TeGui.size - retorna 2 variables ($x, $y).
+
 Pots amagar o mostrar el cursor utilitzant: TeGui.cursorshow - TeGui.cursorhide.
 
 Pots netejar el terminal utilitzant: TeGui.clear.
